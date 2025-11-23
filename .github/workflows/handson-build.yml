@@ -1,0 +1,24 @@
+name: Build and Push to ECR
+
+on:
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+
+env:
+  AWS_REGION: ap-northeast-1
+
+  APP_ECR_REPOSITORY: handson/app
+  APP_DOCKERFILE_PATH: Dockerfile
+  MIGRATION_ECR_REPOSITORY: handson/migration
+  MIGRATION_DOCKERFILE_PATH: migration/Dockerfile
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Dummy Step
+        run: echo "run build workflow"
